@@ -74,8 +74,12 @@ opacity: 1;
     border-radius: 10px;
     overflow: hidden;
 }
-.popup .box.shake_animate{
-    animation: shake 0.3s linear;
+.popup.shake-effect .box{
+    animation: shake 0.3s;
+    animation-iteration-count: 2;
+}
+.popup.zoom-effect .box{
+    animation: zoom 0.3s ease-in-out;
 }
 .popup .box img{
     width: inherit;
@@ -87,15 +91,15 @@ opacity: 1;
 .popup .box i,
 .popup .box ul li{
     cursor: pointer;
-    width: 35px;
-    height:35px;
+    width: 32px;
+    height:32px;
     background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-    color: yellow;
+    color: #f9ec31;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 .popup .box i.close{
@@ -117,9 +121,9 @@ opacity: 1;
 }
 .popup .box ul{
     left: 50%;
-    bottom: 0;
+    bottom: 20px;
     transform: translateX(-50%);
-    column-gap: 12px;
+    column-gap: 10px;
 }
 .popup .box ul li.active{
     background: #fff;

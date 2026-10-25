@@ -84,13 +84,21 @@ popupPrevKey.addEventListener("click", function(){
 
 popupIndicators.forEach(function(popupIndicator, currentIndicatorIndex){
     popupIndicator.addEventListener("click",function(){
-        let newImgEle = galleryImages[currentIndicatorIndex],
-        newImgSrc = newImgEle.getAttribute("src");
+        if (currentIndicatorIndex === currentImgIndex){
+            popupEle.classList.add("zoom-effect");
+            setTimeout(function(){
+                popupEle.classList.remove("zoom-effect");
+            },300)
+        }else{
 
-        currentImgIndex = currentIndicatorIndex;
-
-        updatePopupImg(newImgSrc);
-        updateIndicators();
+            let newImgEle = galleryImages[currentIndicatorIndex],
+            newImgSrc = newImgEle.getAttribute("src");
+    
+            currentImgIndex = currentIndicatorIndex;
+    
+            updatePopupImg(newImgSrc);
+            updateIndicators();
+        }
     });
 });
 
@@ -116,20 +124,30 @@ document.addEventListener("keydown", function(e){
 
         updateIndicators();
     updatePopupImg(prevImgSrc);
-};
-document.addEventListener("keydown",(event) =>{
-    let keyPressed = parseInt(event.key);
-    if(!isNaN(event.key) && event.key !== " "){
-
+}else if(!isNaN(event.key) && event.key !== " "){
+        let keyPressed = parseInt(event.key);
     
         if (keyPressed >= "1" && keyPressed <= galleryImages.length){
-            currentImgIndex = parseInt(keyPressed) -1;
-            const currentImgSrc = galleryImages[currentImgIndex].getAttribute("src");
-            updateIndicators();
-            updatePopupImg(currentImgSrc);
+            if(keyPressed === (currentImgIndex + 1)){
+                popupEle.classList.add("zoom-effect");
+                setTimeout(function(){
+                    popupEle.classList.remove("zoom-effect")
+                },300);
+            }else {
+                currentImgIndex = parseInt(keyPressed) -1;
+                const currentImgSrc = galleryImages[currentImgIndex].getAttribute("src");
+                updateIndicators();
+                updatePopupImg(currentImgSrc);
+            }
         }
 
     }
+else{
+            popupEle.classList.add("shake-effect");
+            setTimeout(function(){
+                popupEle.classList.remove("shake-effect");
+            }, 1000);
+        };
 });
-});
+
 

@@ -1,4 +1,4 @@
-/* @keyframes shake_animate{
+@keyframes shake{
      0% {
         transform: rotate(0deg);
     }
@@ -8,6 +8,18 @@
     }
 
     100% {
-        transform: rotate(-3deg);
+        transform: rotate(-4deg);
     }
-} */
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

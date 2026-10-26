@@ -125,6 +125,6 @@ opacity: 1;
     transform: translateX(-50%);
     column-gap: 10px;
 }
-.popup .box ul li.active{
+.popup .box ul li.active {
     background: #fff;
 }

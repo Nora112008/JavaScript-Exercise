@@ -1,0 +1,50 @@
+@media (max-width: 1300px) {
+.popup .box{
+    width: 280px;
+}
+.popup .box ul{
+    column-gap: 5px;
+}
+.popup .box i,
+.popup .box ul li{
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+}
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+.popup .box{
+    width: 350px;
+}
+.popup .box ul{
+    column-gap: 8px;
+}
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+    .popup .box{
+    width: 400px;
+}
+.popup .box ul{
+    column-gap: 10px;
+}
+.popup .box i,
+.popup .box ul li{
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+      .popup .box{
+    width: 500px;
+}
+.popup .box i,
+.popup .box ul li{
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+}
+}
+@media (min-width: 1181px) and (max-width: 1300px) {}
